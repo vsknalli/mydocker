@@ -1,0 +1,9 @@
+ firewall-cmd --permanent --add-port=8089/tcp
+ firewall-cmd --permanent --add-port=8088/tcp
+ firewall-cmd --reload
+
+docker run -d --name tomcat-container -p 8088:8080 demotomcat
+docker run -d --name demotomcat-container -p 8085:8080 demotomcat
+docker exec -it 9dfeb /bin/bash
+
+
